@@ -1,0 +1,6 @@
+root->data = 1
+root->left->data = 2
+root->right->data = 3
+root->left->left->data = 4
+root->left->right->data = 5
+root->right->left->data = 6

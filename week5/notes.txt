@@ -1,0 +1,45 @@
+Notes for lecture 5 - section data structures
+
+When to use a certain type of data structure:
+
+Scenario 1:
+You work for a company that has created a digital assistant with
+its wake word. Sometimes the assistant doesn't hear the wake word correctly.
+Your job is to ensure the voice assistant can be awoken with a greater variety of words.
+
+When choosing for the correct type of data structure we need to consider the following:
+- Deletion
+- Insertion
+- Searching
+
+To create a node in C:
+                                                                struct node {
+                                                                    string phrase;
+                                                                    struct node *next;
+                                                                }
+                                                                node;
+
+Define node, inside of it we have phrase and a pointer to the struct node.
+This work for now for phrases but it's for example sakes.
+
+Now create a node that is a pointer to the struct node:
+                                                                node *list = NULL;
+                                                                node *n = malloc(sizeof(node));
+
+The node *n is now pointing to some space for a node in memory.
+
+Now we need to add the phrase to the node:
+                                                                n->phrase = "hello";       
+
+We are declaring that "hello" is the phrase in the node.
+After that we need to add the node to the list:
+                                                                n->next = NULL;
+                                                                list = n;
+
+Now we have a list with one node in it.
+
+Now we add another node to the list:
+                                                                node *n2 = malloc(sizeof(node));
+                                                                n2->phrase = "hi";
+                                                                n2->next = list;
+                                                                list = n2;
